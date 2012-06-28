@@ -12,7 +12,7 @@ instances_to_restart = []
 ##########################################################################
 # 1. Match the instances to vhosts. We use the base_uri parameter here
 
-instances.each do |inst|
+instances.each_pair do |name, inst|
   uri = base_uri(inst)
 
   vhosts[uri.hostname] ||= {}

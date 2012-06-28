@@ -1,7 +1,7 @@
 self.class.send(:include, ChiliProject::Helpers)
 
 instances = Chef::DataBag.load("chiliproject")
-instances.each do |inst|
+instances.each_pair do |name, inst|
   db = db_hash(inst)
 
   case db['adapter']
